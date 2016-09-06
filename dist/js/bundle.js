@@ -50,15 +50,21 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	var _yahoo = __webpack_require__(3);
+
+	var _yahoo2 = _interopRequireDefault(_yahoo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var style = __webpack_require__(3);
+	var style = __webpack_require__(4);
 	//var jquery = require('jquery');   // jquery can be named as $
 	//改寫成2016語法
+	// > 10kb 給連結, <=10kb 則轉成base64
 
 	//jquery('#title').html('Hello jQuery');
 	(0, _jquery2.default)(document).ready(function () {
 	    (0, _jquery2.default)('#title').html('Hello jQuery');
+	    (0, _jquery2.default)('#image').html('<img src="' + _yahoo2.default + '" alt=""/>');
 	});
 	/*
 	var a = require('./test.js');
@@ -1712,13 +1718,19 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "14d8f7be12a37bd7fd67c3222709ad95.png";
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1735,10 +1747,10 @@
 	}
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 
 
@@ -1749,7 +1761,7 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1804,7 +1816,7 @@
 	};
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
