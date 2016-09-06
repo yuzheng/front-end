@@ -12,7 +12,7 @@ module.exports = {
         loaders: [{
             test: /\.scss$/,    //$表示在字串的最後面    //符合test的描述就會執行底下的loader
             //loader: 'style-loader!css-loader!sass-loader'   //sass->css->style (由右傳至左)
-            loader: extractTextPlugin.extract('style-loader','css-loader!sass-loader')
+            loader: extractTextPlugin.extract('style-loader','css-loader?modules&importLoaders=1&localIdentName=[name][local]_[hash:base64:5]!sass-loader')
         }, {
             test: /\.js$/,
             loader: 'babel-loader'

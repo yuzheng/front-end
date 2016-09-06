@@ -6,7 +6,8 @@ import titleCover from '../images/mario-icon.png';  // > 10kb 給連結, <=10kb 
 //jquery('#title').html('Hello jQuery');
 jquery(document).ready(function(){
     jquery('#title').html('Hello jQuery');
-    jquery('#image').html(`<img src="${titleCover}" alt=""/>`);
+    jquery('.content').addClass(`${style.content}`);
+    jquery('#image').html(`<img class="${style.img}" src="${titleCover}" alt=""/>`);
 });
 /*
 var a = require('./test.js');

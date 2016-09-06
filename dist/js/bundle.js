@@ -64,7 +64,8 @@
 	//jquery('#title').html('Hello jQuery');
 	(0, _jquery2.default)(document).ready(function () {
 	    (0, _jquery2.default)('#title').html('Hello jQuery');
-	    (0, _jquery2.default)('#image').html('<img src="' + _marioIcon2.default + '" alt=""/>');
+	    (0, _jquery2.default)('.content').addClass('' + style.content);
+	    (0, _jquery2.default)('#image').html('<img class="' + style.img + '" src="' + _marioIcon2.default + '" alt=""/>');
 	});
 	/*
 	var a = require('./test.js');
@@ -1725,6 +1726,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"content":"maincontent_Rps7w","title":"maintitle_KqKGv","img":"mainimg_1M4fh","test":"maintest_3Okrq"};
 
 /***/ }
 /******/ ]);
