@@ -1,5 +1,14 @@
 var gulp = require('gulp');
+var browserSync = require('browser-sync');
 var browserify = require('gulp-browserify');
+
+gulp.task('default', function(){
+    return browserSync.init({
+        server: {
+            baseDir:'./'
+        }
+    });
+});
 
 // Basic usage
 gulp.task('js', function() {
@@ -11,3 +20,4 @@ gulp.task('js', function() {
         }))
         .pipe(gulp.dest('./build/js'))
 });
+
