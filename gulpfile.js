@@ -32,21 +32,6 @@ gulp.task('images', function() {
     .pipe(notify('images task complete'));
 });
 
-gulp.task('css', function() {
-    return gulp.src('./src/sass/main.scss')
-    .pipe(sourcemap.init())
-    .pipe(sass())
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(sourcemap.write())    
-    .pipe(gulp.dest('./dist/css/'))
-    .pipe(cleanCss())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./dist/css/'))
-    .pipe(notify('Found file: <%= file.relative %>!'));
-});
 
 // gulp.task('js', function() {
 //     return gulp.src('./src/js/**/*')
@@ -60,17 +45,19 @@ gulp.task('css', function() {
 //     .pipe(notify('Found file: <%= file.relative %>!'));
 // });
 
-gulp.task('js', function() {
-    return gulp.src('./src/js/app.js')
-    .pipe(browserify({
-        insertGlobals: false,
-        debug: !gulp.env.production
-    }))
-    .pipe(gulp.dest('./dist/js/'))
-    .pipe(notify('Found file: <%= file.relative %>!'));
-});
 
-gulp.task('build', ['css', 'js', 'images'], function() {});
+// gulp.task('js', function() {
+//    return gulp.src('./src/js/app.js')
+//    .pipe(browserify({
+//        insertGlobals: false,
+//        debug: !gulp.env.production
+//    }))
+//    .pipe(gulp.dest('./dist/js/'))
+//    .pipe(notify('Found file: <%= file.relative %>!'));
+//});
+
+//gulp.task('build', ['css', 'js', 'images'], function() {});
+gulp.task('build', ['images'], function() {});
 
 gulp.task('reload', function() {
     browserSync.reload();
@@ -78,7 +65,7 @@ gulp.task('reload', function() {
 
 gulp.task('watch', ['build'], function() {
     // gulp.watch(['./src/js/**/*'], ['js']);
-    gulp.watch(['./src/sass/**/*'], ['css']);
+    // gulp.watch(['./src/sass/**/*'], ['css']);
     gulp.watch(['./src/images/**/*'], ['images']);
     gulp.watch(['./dist/**/*'], ['reload'])
 });
