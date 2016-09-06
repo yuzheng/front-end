@@ -1,0 +1,23 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuzheng/front-end.git"
+  },
+  "author": "yuzheng (yuzheng.wang@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuzheng/front-end/issues"
+  },
+  "homepage": "https://github.com/yuzheng/front-end#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1"
+  }
+}
