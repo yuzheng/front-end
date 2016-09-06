@@ -6,7 +6,7 @@ gulp.task('js', function() {
     // Single entry point to browserify
     gulp.src('src/js/app.js')
         .pipe(browserify({
-          insertGlobals : true,
+          insertGlobals : false, //true
           debug : !gulp.env.production
         }))
         .pipe(gulp.dest('./build/js'))
