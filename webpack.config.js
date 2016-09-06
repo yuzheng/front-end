@@ -15,7 +15,7 @@ module.exports = {
             loader: 'babel-loader'
         }, {
             test: /\.png$/,
-            loader: 'url-loader?limit=10000&name=../../dist/images/[name].[ext]'  // < 100kb 的圖檔轉成base64格式
+            loader: 'url-loader?limit=50000&name=../../dist/images/[name].[ext]'  // < 50kb 的圖檔轉成base64格式
         }]
     }
 }
