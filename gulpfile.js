@@ -11,7 +11,9 @@ var del = require('del');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var browserify = require('gulp-browserify');
-var ghPage = require('gulp-gh-pages')
+var ghPage = require('gulp-gh-pages');
+var webpack = require('webpack-stream');
+var shell = require('gulp-shell');
 
 gulp.task('default', ['watch'], function() {
     return browserSync.init({
@@ -66,6 +68,7 @@ gulp.task('reload', function() {
 gulp.task('watch', ['build'], function() {
     // gulp.watch(['./src/js/**/*'], ['js']);
     // gulp.watch(['./src/sass/**/*'], ['css']);
+    //shell('webpack --watch');
     gulp.watch(['./src/images/**/*'], ['images']);
     gulp.watch(['./dist/**/*'], ['reload'])
 });
@@ -74,4 +77,11 @@ gulp.task('watch', ['build'], function() {
 gulp.task('deploy', function() {
     gulp.src(['./index.html', './dist/**/*'], { base: __dirname })
     .pipe(ghPage());
-})
+});
+
+gulp.task('bundle', shell.task(['webpack'])
+
+//   return gulp.src('./src/js/app.js')
+//    .pipe(webpack(require('./webpack.config.js')))
+//    .pipe(gulp.dest('./'))
+);
