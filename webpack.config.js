@@ -1,8 +1,10 @@
+var webpack = require('webpack');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        bundle: './src/js/app.js'   //js 入口點
+        bundle: './src/js/app.js',   //js 入口點
+        vendor: ['jquery']
     },
     output: {
         path: './dist',
@@ -23,6 +25,8 @@ module.exports = {
     },
     plugins: [
         //new extractTextPlugin('main.css')  //輸出在 dist/js/main.css
-        new extractTextPlugin('./css/main.css')  //輸出在 dist/js/main.css
+        new extractTextPlugin('./css/main.css'),  //輸出在 dist/js/main.css
+        // https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin 
+        new webpack.optimize.CommonsChunkPlugin('vendor','./js/vendor.bundle.js')  //'vendor' entry點
     ]
 }
