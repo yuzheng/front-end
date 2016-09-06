@@ -49,10 +49,19 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	module.exports = 'Hello';
 
+	var a = __webpack_require__(2);
+	console.log('Hello: '+a);
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = 'Header';
 
 /***/ }
 /******/ ]);
